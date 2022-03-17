@@ -17,6 +17,7 @@ class CustomerService{
             lastName: 'Peric'
         }
     ]
+        this.addId = 4
     }
 
     getAll(){
@@ -34,6 +35,14 @@ class CustomerService{
     
         return true
     }
+
+    create(newCustomer) {
+        this.customers.push({id: this.addId, ...newCustomer, products: []});
+  
+        this.addId++;
+  
+        return this.customers[this.customers.length-1];
+    }  
 }
 
 export default new CustomerService()
