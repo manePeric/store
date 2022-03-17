@@ -1,10 +1,7 @@
 import React, { useState } from 'react'
+import productService from '../services/ProductService';
 function AppProducts(){
-    return(
-    <div>
-        <h1>Products</h1>
-    </div>
-    )
+    const [products, setProducts] = useState(productService.getAll())
 }
 
 export default AppProducts;
